@@ -15,6 +15,7 @@ var DatePicker = React.createClass( {
     popoverAttachment: React.PropTypes.string,
     popoverTargetAttachment: React.PropTypes.string,
     popoverTargetOffset: React.PropTypes.string,
+    weekStart: React.PropTypes.string,
     onChange: React.PropTypes.func.isRequired,
     onBlur: React.PropTypes.func
   },
@@ -161,7 +162,9 @@ var DatePicker = React.createClass( {
           placeholderText={this.props.placeholderText}
           disabled={this.props.disabled}
           className={this.props.className}
-          title={this.props.title} />
+          title={this.props.title}
+          readOnly={this.props.readOnly}
+          required={this.props.required} />
         {clearButton}
         {this.props.disabled ? null : this.calendar()}
       </div>
